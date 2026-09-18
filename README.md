@@ -1,2 +1,2 @@
 # cved
-Connected Vehicle Emergency Dataset (CVED)
+Connected Vehicle Emergency Dataset (CVEDS)
