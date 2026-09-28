@@ -1,0 +1,53 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains Vehicle Contextual data.
+#
+
+Occupant:
+  type: branch
+  description: Additional occupant data
+
+Occupant.Weight:
+  type: rw
+  datatype: float
+  min: 0
+  description: Occupant weight
+
+Occupant.SeatPosition:
+  type: branch
+  description: Occupant seat position data
+
+Occupant.SeatPosition.Row:
+  type: rw
+  datatype: uint8
+  description: The seat row where the occupant is seated
+
+Occupant.SeatPosition.Index:
+  type: rw
+  datatype: uint8
+  description: The seat index of the row where the occupant is seated
+
+Vehicle:
+  type: branch
+  description: Additional vehicle data
+
+Vehicle.SeatLayout:
+  type: branch
+  description: Vehicle seat layout
+
+Vehicle.SeatLayout.RowTotal:
+  type: rw
+  datatype: uint8
+  description: The total number of vehicle seat rows
+
+Vehicle.SeatLayout.RowLayout:
+  type: rw
+  datatype: uint8
+  description: The seat index of the row where the occupant is seated

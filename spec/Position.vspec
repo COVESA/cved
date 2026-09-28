@@ -1,0 +1,43 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains data on the position in the vehicle of the person.
+#
+
+Position:
+  type: branch
+  description: Branch containing data on the position in the vehicle of the person.
+
+Position.Seat:
+  type: branch
+  description: Data specifying the seat used by the occupant.
+
+Position.Seat.Row:
+  datatype: uint8
+  type: sensor
+  description: The vehicle seat row number.
+
+Position.Seat.Index:
+  datatype: uint8
+  type: sensor
+  description: The seat index number. Starts at 1 for the leftmost seat and increases for each seat towards the right.
+
+Position.SeatLayout:
+  type: branch
+  description: Data that describes the seat layout of the vehicle.
+
+Position.SeatLayout.RowTotal:
+  datatype: uint8
+  type: sensor
+  description: The total number of seat rows in the vehicle. Starts at 1 for the front row and increases for each row towards the rear.
+
+Position.SeatLayout.RowLayout:
+  datatype: uint8[]
+  type: sensor
+  description: The total number of seats for each seat row in the vehicle. The first array element refers to the front row, the last to the rear-most row.

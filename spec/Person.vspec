@@ -1,0 +1,62 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Person data.
+#
+
+Person:
+  type: branch
+  description: Branch containing Person data.
+
+Person.PersonFullName:
+  type: rw
+  datatype: string
+  description: "Name of the associated person. Format: Text."
+
+Person.DateOfBirth:
+  type: rw
+  datatype: string
+  description: "Date of Birth for the Associated Individual expressed as at four-digit year, hyphen, two-digit month, hyphen, two-digit day. Format: yyyy-mm-dd."
+
+Person.Sex:
+  type: rw
+  datatype: string
+  allowed: ['M', 'F']
+  description: "Indicates the gender identity of the person. Values: M = Male, F = Female."
+
+Person.PrimaryLanguageCategoryCode:
+  type: rw
+  datatype: string
+  description: "Primary Language. Values: English, Spanish, French, German, Russian, Japanese, Chinese, Arabic, Italian, Korean, Portuguese, Vietnamese, (Other - Specified as Open Text). Format: Text."
+
+Person.HearingImpairedIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates whether the person is hearing impaired. Values: true, false."
+
+Person.MobilityImpairedIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates whether the person is mobility impaired. Values: true, false."
+
+Person.SpeechImpairedIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates whether the person is speech impaired. Values: true, false."
+
+Person.OtherConditionsText:
+  type: rw
+  datatype: string
+  description: "Other condition information that may be of use to responders. Format: Text."
+
+#include DriverLicense.vspec Person
+
+#include EmergencyContactInformation.vspec Person
+
+#include Position.vspec Person

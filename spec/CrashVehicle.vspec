@@ -1,0 +1,106 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Crash Vehicle data.
+#
+
+CrashVehicle:
+  type: branch
+  description: Branch containing Crash Vehicle data.
+
+CrashVehicle.VehicleBodyType:
+  type: rw
+  datatype: uint16
+  min: 101
+  max: 116
+  description: "Vehicle Body Type. Values: A code in the range 101 through 116, per NIEM 2.0: 101 Passenger Car, 102 (Sport)Utility Vehicle, 103 Passenger Van, 104 Cargo Van (10,000 lbs (4,536 kg) or less), 105 Pick Up, 106 Motor Home, 107 School Bus, 108 Transit Bus, 109 Motor Coach, 110 Other Bus, 111 Motorcycle, 112 Moped, 113 Low Speed Vehicle, 114 Other Light Trucks (10,000 lbs (4,536 kg) or less), 115 Medium/Heavy Trucks (more than 10,000 lbs (4,536 kg)), 116 Other. Notes: Motorcycles (Includes motorcycles, motor scooters, mopeds, motor-powered bicycles, three-wheel motorcycles, and All-Terrain Vehicles.) Typical vehicles have saddle type seats and are steered by handlebars rather than steering wheels; Passenger Vehicles (Includes Passenger Cars, Electric Vehicles, Alternate Propulsion Vehicles, Utility Vehicles, Van-Based Light Trucks, Light Conventional Trucks, and Other Light Conventional Trucks <10,000 lbs.) Typical vehicles are those manufactured primarily for the purpose of carrying passengers and single-unit vehicles pulling recreational or other light trailers); Buses (All Buses except van-based); Motor Homes (All classes including light/medium/heavy truck-based motor homes, and campers or unknown type motor homes); Heavy/Medium Vehicles 10,000-30,000 lbs (Typically trucks with dual rear wheels or more than two axles); Semi-Truck (Big rig, transport vehicle, may be up to 120,000 lbs); Other Vehicles (Snowmobiles, farm vehicles, construction equipment other than trucks, street sweepers, dune buggy, go-cart- golf cart, etc.)"
+
+CrashVehicle.DOTNumber:
+  type: rw
+  datatype: uint32
+  description: "USDOT assigned vehicle number (if commercial); USDOT value could be used for other purposes, i.e., LoJack, OnStar, etc. Format: seven digits (NNNNNNN)."
+
+CrashVehicle.MakeText:
+  type: rw
+  datatype: string
+  description: "Indicates vehicle make, e.g., Cadillac, Ford. Format: Text."
+
+CrashVehicle.ModelText:
+  type: rw
+  datatype: string
+  description: "Indicates vehicle model, e.g., Escalade, Taurus. Format: Text."
+
+CrashVehicle.ModelYear:
+  type: rw
+  datatype: uint16
+  description: "Indicates vehicle model year, e.g., 2002. Format: normally a simple four-digit year, but any xsd:gYear value is permitted."
+
+CrashVehicle.ConvertibleIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates whether a vehicle is a convertible. Values: true, false."
+
+CrashVehicle.PrimaryColor:
+  type: rw
+  datatype: string
+  description: "Indicates Primary Color of Vehicle. Format: Text."
+
+CrashVehicle.SecondaryColor:
+  type: rw
+  datatype: string
+  description: "Indicates Vehicle Secondary Color. Format: Text."
+
+CrashVehicle.InteriorColor:
+  type: rw
+  datatype: string
+  description: "Indicates Vehicle Interior Color. Format: Text."
+
+CrashVehicle.PowerSourceCategoryCode:
+  type: rw
+  datatype: string
+  allowed: ['MAIN', 'BACKUP', 'OTHER']
+  description: "Indicates the nature of the power source. Values: MAIN (main battery), BACKUP (backup battery), OTHER."
+
+CrashVehicle.VIN:
+  type: rw
+  datatype: string
+  description: "Vehicle Identification Number, length of 17 characters. Format: Text."
+
+CrashVehicle.VehicleHumanDriverEngagedIndicator:
+  type: rw
+  datatype: boolean
+  description: "True indicates that the vehicle has detected that the human driver was engaged (e.g., hands on the wheel, eyes on the road) at the time that the data was collected during the crash. Values: true, false."
+
+CrashVehicle.VehiclePropulsionStorageTypeCode:
+  type: rw
+  datatype: string
+  allowed: ['Gasoline', 'CNG', 'Diesel', 'Electric', 'Ethanol', 'Hydrogen', 'LPG', 'Other']
+  description: "A code list that describes the method that is used to store energy for a vehicle. Values: Gasoline = Gasoline Storage Present, CNG = Compressed Natural Gas Storage Present, Diesel = Diesel Storage Present, Electric = Electric Energy Storage Present, Ethanol = Ethanol Storage Present, Hydrogen = Hydrogen Storage Present, LPG = Liquid Propane Gas Storage Present, Other = Other."
+
+CrashVehicle.VehicleAutonomousCapabilityCode:
+  type: rw
+  datatype: uint8
+  min: 0
+  max: 5
+  description: "Based on the SAE International's Standard J3016, this code list classifies a system's level of sophistication. Values: 0 = Not Autonomous, 1 = Driver Assistance, 2 = Partial Automation, 3 = Conditional Automation, 4 = High Automation, 5 = Complete Automation. Format: Numeric."
+
+CrashVehicle.VehiclePedestrianProtectionDeviceDeployedIndicator:
+  type: rw
+  datatype: boolean
+  description: "True indicates that the vehicle pedestrian protection device deployed during the crash. Values: true, false."
+
+CrashVehicle.VehicleUnladenWeight:
+  type: rw
+  datatype: uint32
+  description: "Indicates curbside weight of vehicle measured in pounds. Format: a positive integer."
+
+#include CrashPulse.vspec CrashVehicle
+#include Seat.vspec CrashVehicle
+#include Airbag.vspec CrashVehicle
+#include Registration.vspec CrashVehicle

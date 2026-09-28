@@ -1,0 +1,62 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Crash Incident data.
+#
+
+CrashIncident:
+  type: branch
+  description: Branch containing Crash Incident data.
+
+CrashIncident.IncidentID:
+  type: rw
+  datatype: string
+  description: "Indicates the internal case identifier number of the incident used by the incident originator. Format: Text."
+
+CrashIncident.IncidentDateTime:
+  type: rw
+  datatype: string
+  description: "UTC date and time of the incident. Value: CCYY-MM-DDThh:mm:ss.sss (concatenation of date and time, separated by a literal letter \"T\") as specified in xsd:dateTime."
+
+CrashIncident.SevereInjuryIndicator:
+  type: rw
+  datatype: boolean
+  description: "High Likelihood of Severe Injury? Values: true, false. The value 'true' indicates a greater than 20% probability of an Injury Severity Score ISS15 as predicted by an injury severity algorithm per the recommendations from the 2008 CDC AACN Expert Panel."
+
+CrashIncident.VehicleHeadingMeasure:
+  type: rw
+  datatype: uint16
+  min: 0
+  max: 359
+  description: "Direction vehicle was heading directly before crash, as a measure of the angular heading of the vehicle. Values: A compass heading in the range 0 to 359. NIEM 2.1 defines this as a point value, a range, or text. RFC 8148 has an example of '278', as a compass heading. Specifying this seems more consistent and reliable."
+
+CrashIncident.Final RestOrientationCode:
+  type: rw
+  datatype: string
+  allowed: ['NORMAL', 'DRIVER', 'PASSENGER', 'ROOF', 'REAR', 'FRONT', 'UNKNOWN']
+  description: "Orientation of vehicle at final rest. Values: Normal, Driver, Passenger, Roof, Rear (Rear Bumper), Front (Front Bumper), Unknown. Format: Text."
+
+CrashIncident.VehicleFireIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates if any part of the vehicle is on fire. Values: true, false."
+
+CrashIncident.MultipleImpactsIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates if the vehicle was subjected to multiple impacts. Values: true, false."
+
+CrashIncident.FuelLeakingIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates if a fuel leak has been detected. Values: true, false."
+
+#include CrashPersonRole.vspec CrashIncident
+#include Location.vspec CrashIncident
+#include CrashVehicle.vspec CrashIncident

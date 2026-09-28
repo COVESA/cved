@@ -1,0 +1,44 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Incident Originator data.
+#
+
+IncidentOriginator:
+  type: branch
+  description: Branch containing Incident Originator data.
+
+IncidentOriginator.ProviderName:
+  type: rw
+  datatype: string
+  description: "Name of provider or system providing data. Format: Text."
+
+IncidentOriginator.OriginatorCategoryCode:
+  type: rw
+  datatype: string
+  allowed: ['VEHICLE', 'DIRECT', 'TELEMATICS', 'ROADSIDE', 'COMMERCIAL', 'PSAP', 'PSA']
+  description: "Categorizes the provider or source of the data. As with most VEDS elements, this element may appear multiple times, e.g., a data source may be In-Vehicle Telemetry and a second data source may be the Vehicle Telematics Service Provider, while a third data source might be the Public Safety Agency. Values: VEHICLE (In-Vehicle Telemetry), DIRECT (Direct Dial), TELEMATICS (Vehicle Telematics Service Provider), ROADSIDE (Roadside Assistance Provider), COMMERCIAL (Commercial Vehicle Operator), PSAP (Public Safety Answering Point, also known as Emergency Communications Center), PSA (Public Safety Agency)."
+
+IncidentOriginator.IncidentOriginatorIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates if the source providing the data is the originator of the incident. Values: true, false."
+
+IncidentOriginator.OrganizationID:
+  type: rw
+  datatype: string
+  description: "A unique identifier for possible interface exchanges between a Telematics Service Provider and a 9-1-1 ECC using NG9-1-1, NLETS, or another transport method. Superseded in most cases by the metadata/control object of RFC8147, as referenced in RFC8148. A suggested value is the Content-ID of the metadata/control object sent with the NG9-1-1-call. Format: Text."
+
+IncidentOriginator.EmployeeID:
+  type: rw
+  datatype: string
+  description: "ID of the employee that initiated the data transmission to the ECC. Typically, an employee's initials or other ID. Format: Text."
+
+#include ContactInformation.vspec IncidentOriginator
+

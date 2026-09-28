@@ -1,0 +1,38 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the COVESA Vehicle Emergency Data set.
+#
+
+CVED:
+  type: branch
+  description: COVESA Vehicle Emergency Data Set.
+
+#
+# Include the legacy VEDS data set.
+#
+#include AutomatedCrashNotification.vspec CVED
+
+#
+# Include additional contextual data.
+#
+CVED.Context:
+  type: branch
+  description: Additional contextual data.
+
+#include Context.vspec CVED.Context
+
+#
+# Include the CVED version data.
+#
+CVED.Version:
+  type: branch
+  description: CVED version data.
+
+#include Version.vspec CVED.Version

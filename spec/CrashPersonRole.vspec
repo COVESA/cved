@@ -1,0 +1,34 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Crash Person Role data.
+#
+
+CrashPersonRole:
+  type: branch
+  description: Branch containing Crash Person Role data.
+
+CrashPersonRole.PersonID:
+  type: rw
+  datatype: uint32
+  description: "A sequential identification assigned to each person involved in a crash or other incident. First person has the value 0, second person has the value 1, etc. Format: Numeric."
+
+CrashPersonRole.PersonRoleCategoryCode:
+  type: rw
+  datatype: string
+  allowed: ['CONFIRMED', 'PRIMARY', 'FREQUENT', 'PASSENGER', 'SUBSCRIBER', 'OWNER']
+  description: "Describes the role of any person involved in the crash or other incident. This field may occur multiple times. Values: CONFIRMED (Confirmed Driver), PRIMARY (Primary Driver), FREQUENT (Frequent Driver), PASSENGER (Passenger), SUBSCRIBER (Telematics Service Subscriber), OWNER (Vehicle Owner). Format: Text."
+
+CrashPersonRole.RoleofPersonID:
+  type: rw
+  datatype: string
+  description: Reference identifier linking this crash person role to the associated Person record (corresponds to the RoleOfPersonReference link in the VEDS XML structure).
+
+#include Person.vspec CrashPersonRole
+

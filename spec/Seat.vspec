@@ -1,0 +1,37 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Seat data.
+#
+
+Seat:
+  type: branch
+  description: Branch containing Seat data.
+
+Seat.SeatID:
+  type: rw
+  datatype: uint8
+  min: 1
+  max: 9
+  description: "Indicates seatbelt and seat sensor data for individual seat positions in the vehicle. Required attribute Position. Values 1-9: 1=Driver front, 2=Passenger front, 3=second row left, 4=second row middle, 5=second row right, 6=third row left, 7=third row middle, 8=third row right, 9=front row middle."
+
+Seat.BeltMonitoredIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates if this seatbelt is being monitored. Values: true, false."
+
+Seat.BeltFastenedIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates if this seatbelt is fastened. Values: true, false."
+
+Seat.OccupiedIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates if this seat sensor determines seat is occupied. Values: true, false."

@@ -1,0 +1,47 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Automated Crash Notification data.
+#
+
+AutomatedCrashNotification:
+  type: branch
+  description: Branch containing Automated Crash Notification data.
+
+AutomatedCrashNotification.ReceivedDateTime:
+  type: rw
+  datatype: string
+  description: "UTC date and time that the incident originator received notification of the incident. Value: CCYY-MM-DDThh:mm:ss.sss (concatenation of date and time, separated by a literal letter \"T\") as specified in xsd:dateTime."
+
+AutomatedCrashNotification.TransmissionDateTime:
+  type: rw
+  datatype: string
+  description: "UTC date and time that the incident data was transmitted to the PSAP when such a transport mechanism exists such as NLETS or NG9-1-1. Value: CCYY-MM-DDThh:mm:ss.sss (concatenation of date and time, separated by a literal letter \"T\") as specified in xsd:dateTime."
+
+AutomatedCrashNotification.EventVerifiedIndicator:
+  type: rw
+  datatype: boolean
+  description: "Indicates if there was confirmation (either verbal or electronic) of the event by the incident originator and a PSAP or other public safety agency. Values: true (incident verified), false (incident not verified)."
+
+AutomatedCrashNotification.DeviceTypeCode:
+  type: rw
+  datatype: string
+  allowed: ['NORMAL', 'AIRBAG', 'TENSIONER', 'ACCELEROMETERS', 'MANUAL', 'INJURY', 'OTHER']
+  description: "Type of device that caused event notification to occur. Values: NORMAL, AIRBAG (AACN Airbag), TENSIONER (AACN Seatbelt Tensioner), ACCELEROMETERS (AACN Vehicle Accelerometers), MANUAL (Manual Push Button), INJURY (AACN Injury Severity), OTHER (AACN Other)."
+
+AutomatedCrashNotification.AdditionalDetailsText:
+  type: rw
+  datatype: string
+  description: "Field for Comment. Format: Free Text."
+
+#include IncidentOriginator.vspec AutomatedCrashNotification
+
+#include AgencyNotified.vspec AutomatedCrashNotification
+
+#include CrashIncident.vspec AutomatedCrashNotification

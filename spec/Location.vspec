@@ -1,0 +1,47 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Location data.
+#
+
+Location:
+  type: branch
+  description: Branch containing Location data.
+
+Location.CrossStreetDescriptionText:
+  type: rw
+  datatype: string
+  description: "This is the closest cross street to the incident. May be the first street of an intersection. Format: Text."
+
+Location.LocationDescription:
+  type: rw
+  datatype: string
+  description: Free text description of the incident location (corresponds to nc:LocationDescriptionText in the VEDS XML structure), e.g. a landmark or other descriptive note supplementing the coordinates/address.
+
+Location.Datum:
+  type: rw
+  datatype: string
+  description: "Map projection and coordinate system recommended for the display of the Longitude and Latitude coordinates. Example values permitted by the nc:GeographicDatumCode code list: NAR-C (Contiguous United States), NAR-A (Alaska), NAR-B (Canada), NAR-H (Hawaii), NAS-A (Eastern United States), NAS-B (Western United States) (Additional values are as specified in the nc:GeographicDatumCode code list). NOTE: nc:GeographicDatumCode does not permit WGS84 nor NAD83. However, VEDS is carried in an NG9-1-1 call, which conveys a PIDF-LO that can use WGS84 and other values."
+
+Location.Latitude:
+  type: rw
+  datatype: double
+  min: -90
+  max: 90
+  description: "Latitudinal coordinate of the incident site in decimal degrees (-90° to +90°). Child element of Location. Format: (+/-) 00.###### Omit value if latitude is unknown."
+
+Location.Longitude:
+  type: rw
+  datatype: double
+  min: -180
+  max: 180
+  description: "Longitudinal coordinate of the incident site in decimal degrees (-180 to +180°). Child element of Location. Format: (+/-) 000.###### Omit value if longitude is unknown."
+
+#include LocationAddress.vspec Location
+
