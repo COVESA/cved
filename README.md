@@ -1,5 +1,5 @@
 ![Status - Incubating](https://img.shields.io/static/v1?label=Status&message=Incubating&color=FEFF3A&style=for-the-badge)
-# Connected Vehicle Emergency Dataset Specification (CVEDS)
+# Connected Vehicle Emergency Dataset Specification (CVED)
 
 [![License](https://img.shields.io/badge/License-MPL%202.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
 
