@@ -39,6 +39,8 @@ The exporter CLI is as is described in the documentation extended with a --profi
 
 The CVED YAML tree is now available in the CVED_Specification.yaml file.
 
+Next time the exporter will be used it is sufficient with the "source .venv/bin/activate" and "deactivate" commands.
+
 ## Contributors
 CVED is an open standard and we invite anybody to contribute. Currently CVED contains - among others - significant  contributions from
 
