@@ -29,5 +29,5 @@ AgencyNotified.EmployeeID:
   datatype: string
   description: "Identification number or name of individual at agency who received call. Format: Text."
 
-#include ContactInformation.vspec AgencyNotified
+#include ContactInformation/ContactInformation.vspec AgencyNotified
 

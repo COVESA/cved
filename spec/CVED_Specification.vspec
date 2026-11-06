@@ -17,7 +17,7 @@ CVED:
 #
 # Include the legacy VEDS data set.
 #
-#include AutomatedCrashNotification.vspec CVED
+#include AutomatedCrashNotification/AutomatedCrashNotification.vspec CVED
 
 #
 # Include additional contextual data.
@@ -26,7 +26,7 @@ CVED.Context:
   type: branch
   description: Additional contextual data.
 
-#include Context.vspec CVED.Context
+#include Context/Context.vspec CVED.Context
 
 #
 # Include the CVED version data.
@@ -35,4 +35,4 @@ CVED.Version:
   type: branch
   description: CVED version data.
 
-#include Version.vspec CVED.Version
+#include Version/Version.vspec CVED.Version

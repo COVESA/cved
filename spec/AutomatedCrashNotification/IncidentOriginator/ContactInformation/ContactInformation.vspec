@@ -1,0 +1,30 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Contact Information data.
+#
+
+ContactInformation:
+  type: branch
+  description: Branch containing Contact Information data.
+
+ContactInformation.CountryCode:
+  type: rw
+  datatype: uint16
+  description: "ITU-T Country Code if international. Format: Numeric."
+
+ContactInformation.FullTelephoneNumber:
+  type: rw
+  datatype: string
+  description: "7 X 24 telephone number to contact the originating agency / called to contact agency. Format: NPA-NXX-LINE."
+
+ContactInformation.Contact DateTime:
+  type: rw
+  datatype: string
+  description: "UTC date and time the notified agency was first contacted by incident originator. Value: CCYY-MM-DDThh:mm:ss.sss (concatenation of date and time, separated by a literal letter \"T\") as specified in xsd:dateTime."

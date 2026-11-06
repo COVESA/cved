@@ -43,5 +43,5 @@ Location.Longitude:
   max: 180
   description: "Longitudinal coordinate of the incident site in decimal degrees (-180 to +180°). Child element of Location. Format: (+/-) 000.###### Omit value if longitude is unknown."
 
-#include LocationAddress.vspec Location
+#include LocationAddress/LocationAddress.vspec Location
 

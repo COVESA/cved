@@ -55,8 +55,8 @@ Person.OtherConditionsText:
   datatype: string
   description: "Other condition information that may be of use to responders. Format: Text."
 
-#include DriverLicense.vspec Person
+#include DriverLicense/DriverLicense.vspec Person
 
-#include EmergencyContactInformation.vspec Person
+#include EmergencyContactInformation/EmergencyContactInformation.vspec Person
 
-#include Position.vspec Person
+##include Position/Position.vspec Person

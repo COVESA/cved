@@ -57,6 +57,6 @@ CrashIncident.FuelLeakingIndicator:
   datatype: boolean
   description: "Indicates if a fuel leak has been detected. Values: true, false."
 
-#include CrashPersonRole.vspec CrashIncident
-#include Location.vspec CrashIncident
-#include CrashVehicle.vspec CrashIncident
+#include CrashPersonRole/CrashPersonRole.vspec CrashIncident
+#include Location/Location.vspec CrashIncident
+#include CrashVehicle/CrashVehicle.vspec CrashIncident
