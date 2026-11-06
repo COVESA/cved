@@ -30,5 +30,5 @@ CrashPersonRole.RoleofPersonID:
   datatype: string
   description: Reference identifier linking this crash person role to the associated Person record (corresponds to the RoleOfPersonReference link in the VEDS XML structure).
 
-#include Person.vspec CrashPersonRole
+#include Person/Person.vspec CrashPersonRole
 

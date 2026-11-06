@@ -40,5 +40,5 @@ IncidentOriginator.EmployeeID:
   datatype: string
   description: "ID of the employee that initiated the data transmission to the ECC. Typically, an employee's initials or other ID. Format: Text."
 
-#include ContactInformation.vspec IncidentOriginator
+#include ContactInformation/ContactInformation.vspec IncidentOriginator
 

@@ -40,8 +40,8 @@ AutomatedCrashNotification.AdditionalDetailsText:
   datatype: string
   description: "Field for Comment. Format: Free Text."
 
-#include IncidentOriginator.vspec AutomatedCrashNotification
+#include IncidentOriginator/IncidentOriginator.vspec AutomatedCrashNotification
 
-#include AgencyNotified.vspec AutomatedCrashNotification
+#include AgencyNotified/AgencyNotified.vspec AutomatedCrashNotification
 
-#include CrashIncident.vspec AutomatedCrashNotification
+#include CrashIncident/CrashIncident.vspec AutomatedCrashNotification
