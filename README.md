@@ -32,12 +32,12 @@ The exporter CLI is as is described in the documentation extended with a --profi
 - Configure venv for the extended vss-tools exporter:
   - (.venv)$ pip install git+https://github.com/ulfbj/vss-tools.git@him-support
 - Export the CVED tree to YAML:
-  - Go to the CVED/spec folder
-  - (.venv)$ vspec --profile data export yaml -s CVED_Specification.vspec -o CVED_Specification.yaml
+  - Go to the CVED root folder
+  - (.venv)$ vspec --profile data export yaml -s spec/CVED_Specification.vspec -t spec/types/CVED-Types.vspec  -o CVED_Specification.yaml --types-output CVED-Types.yaml
 - Terminate venv:
   - (.venv)$ deactivate
 
-The CVED YAML tree is now available in the CVED_Specification.yaml file.
+The CVED_Specification and CVED_Types YAML tree files are now available in the root folder.
 
 Next time the exporter will be used it is sufficient with the "source .venv/bin/activate" and "deactivate" commands.
 

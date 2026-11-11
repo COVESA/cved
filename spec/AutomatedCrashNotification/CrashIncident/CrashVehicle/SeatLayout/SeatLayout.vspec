@@ -1,0 +1,25 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Seat data.
+#
+
+Seat:
+  type: branch
+  description: Branch containing Seat data.
+
+Seat.RowTotal:
+  type: rw
+  datatype: uint8
+  description: The total number of vehicle seat rows
+
+Seat.RowLayout:
+  type: rw
+  datatype: uint8[]
+  description: Array containing the number of seats per row

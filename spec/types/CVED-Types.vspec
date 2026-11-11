@@ -1,0 +1,205 @@
+# Copyright (c) 2020 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# HIM identifier data
+#
+
+Types:
+  type: branch
+  description: CVED type definitions.
+
+##
+# Occupant data
+##
+Types.Occupant:
+  type: struct
+  description: Occupant data struct.
+
+Types.Occupant.NumOfOccupants:
+  type: property
+  datatype: uint8
+  description: Number of vehicle occupants.
+
+Types.Occupant.CrashPersonRole:
+  type: property
+  datatype: Types.CrashPersonRole
+  description: Struct containing Crash Person Role data.
+
+##
+# Crash Person Role data
+##
+Types.CrashPersonRole:
+  type: struct
+  description: Crash Person Role data struct.
+
+Types.CrashPersonRole.PersonID:
+  type: property
+  datatype: uint32
+  description: "A sequential identification assigned to each person involved in a crash or other incident. First person has the value 0, second person has the value 1, etc. Format: Numeric."
+
+Types.CrashPersonRole.PersonRoleCategoryCode:
+  type: property
+  datatype: string
+  allowed: ['CONFIRMED', 'PRIMARY', 'FREQUENT', 'PASSENGER', 'SUBSCRIBER', 'OWNER']
+  description: "Describes the role of any person involved in the crash or other incident. This field may occur multiple times. Values: CONFIRMED (Confirmed Driver), PRIMARY (Primary Driver), FREQUENT (Frequent Driver), PASSENGER (Passenger), SUBSCRIBER (Telematics Service Subscriber), OWNER (Vehicle Owner). Format: Text."
+
+Types.CrashPersonRole.RoleofPersonID:
+  type: property
+  datatype: string
+  description: Reference identifier linking this crash person role to the associated Person record (corresponds to the RoleOfPersonReference link in the VEDS XML structure).
+
+Types.CrashPersonRole.Person:
+  type: property
+  datatype: Types.Person
+  description: Struct containing Person data.
+
+##
+# Person data
+##
+Types.Person:
+  type: struct
+  description: Person data struct.
+
+Types.Person.PersonFullName:
+  type: property
+  datatype: string
+  description: "Name of the associated person. Format: Text."
+
+Types.Person.DateOfBirth:
+  type: property
+  datatype: string
+  description: "Date of Birth for the Associated Individual expressed as at four-digit year, hyphen, two-digit month, hyphen, two-digit day. Format: yyyy-mm-dd."
+
+Types.Person.Sex:
+  type: property
+  datatype: string
+  allowed: ['M', 'F']
+  description: "Indicates the gender identity of the person. Values: M = Male, F = Female."
+
+Types.Person.PrimaryLanguageCategoryCode:
+  type: property
+  datatype: string
+  description: "Primary Language. Values: English, Spanish, French, German, Russian, Japanese, Chinese, Arabic, Italian, Korean, Portuguese, Vietnamese, (Other - Specified as Open Text). Format: Text."
+
+Types.Person.HearingImpairedIndicator:
+  type: property
+  datatype: boolean
+  description: "Indicates whether the person is hearing impaired. Values: true, false."
+
+Types.Person.MobilityImpairedIndicator:
+  type: property
+  datatype: boolean
+  description: "Indicates whether the person is mobility impaired. Values: true, false."
+
+Types.Person.SpeechImpairedIndicator:
+  type: property
+  datatype: boolean
+  description: "Indicates whether the person is speech impaired. Values: true, false."
+
+Types.Person.OtherConditionsText:
+  type: property
+  datatype: string
+  description: "Other condition information that may be of use to responders. Format: Text."
+
+Types.Person.DriverLicense:
+  type: property
+  datatype: Types.DriverLicense
+  description: Struct containing Driver License data.
+
+Types.Person.EmergencyContactInformation:
+  type: property
+  datatype: Types.EmergencyContactInformation
+  description: Struct containing Emergency Contact Information data.
+
+Types.Person.Seat:
+  type: property
+  datatype: Types.Seat
+  description: Struct containing Seat data.
+
+##
+# Driver License data
+##
+Types.DriverLicense:
+  type: struct
+  description: Person data struct.
+
+Types.DriverLicense.DriverLicenseID:
+  type: property
+  datatype: string
+  description: "Driver License Number. (If applicable) Format: Text."
+
+Types.DriverLicense.DriverLicenseState:
+  type: property
+  datatype: string
+  description: "Driver's License State or Province (If applicable). Format: Text."
+
+##
+# Emergency Contact Information data
+##
+Types.EmergencyContactInformation:
+  type: struct
+  description: Emergency Contact Information data struct.
+
+Types.EmergencyContactInformation.ContactID:
+  type: property
+  datatype: uint32
+  description: "ID for each emergency contact, 0 to infinity. Format: Numeric."
+
+Types.EmergencyContactInformation.EmergencyContactName:
+  type: property
+  datatype: string
+  description: "Name of Emergency Contact. Format: Text."
+
+Types.EmergencyContactInformation.Emergency ContactAddressFullText:
+  type: property
+  datatype: string
+  description: "Full Address of Emergency Contact. Format: Text."
+
+Types.EmergencyContactInformation.EmergencyContactPrimaryDeviceID:
+  type: property
+  datatype: string
+  description: "Emergency contact primary contact device number identification, i.e., Telephone or pager. Format: NPA-NXX-LINE."
+
+##
+# Seat data
+##
+Types.Seat:
+  type: struct
+  description: Seat data struct.
+
+Types.Seat.Row:
+  type: property
+  datatype: uint8
+  description: The row where the occupant is seated
+
+Types.Seat.Index:
+  type: property
+  datatype: uint8
+  description: The seat index of the row where the occupant is seated
+
+Types.Seat.BeltMonitoredIndicator:
+  type: property
+  datatype: boolean
+  description: "Indicates if this seatbelt is being monitored. Values: true, false."
+
+Types.Seat.BeltFastenedIndicator:
+  type: property
+  datatype: boolean
+  description: "Indicates if this seatbelt is fastened. Values: true, false."
+
+Types.Seat.OccupiedIndicator:
+  type: property
+  datatype: boolean
+  description: "Indicates if this seat sensor determines seat is occupied. Values: true, false."
+
+Types.Seat.Weight:
+  type: property
+  datatype: float
+  min: 0
+  description: Occupant weight

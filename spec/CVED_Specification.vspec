@@ -20,19 +20,10 @@ CVED:
 #include AutomatedCrashNotification/AutomatedCrashNotification.vspec CVED
 
 #
-# Include additional contextual data.
+# Include CVED identification data.
 #
-CVED.Context:
+CVED.Identifier:
   type: branch
-  description: Additional contextual data.
+  description: CVED identification data.
 
-#include Context/Context.vspec CVED.Context
-
-#
-# Include the CVED version data.
-#
-CVED.Version:
-  type: branch
-  description: CVED version data.
-
-#include Version/Version.vspec CVED.Version
+#include Identifier/Identifier.vspec CVED.Identifier
