@@ -101,6 +101,6 @@ CrashVehicle.VehicleUnladenWeight:
   description: "Indicates curbside weight of vehicle measured in pounds. Format: a positive integer."
 
 #include CrashPulse/CrashPulse.vspec CrashVehicle
-#include Seat/Seat.vspec CrashVehicle
 #include Airbag/Airbag.vspec CrashVehicle
 #include Registration/Registration.vspec CrashVehicle
+#include SeatLayout/SeatLayout.vspec CrashVehicle

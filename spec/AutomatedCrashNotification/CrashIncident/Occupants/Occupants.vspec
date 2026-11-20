@@ -1,0 +1,27 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This file contains the Occupants data.
+#
+
+Occupants:
+  type: branch
+  description: Branch containing occupants data.
+
+Occupants.NumOfOccupants:
+  type: rw
+  datatype: uint8
+  description: Number of vehicle occupants
+
+##include CrashPersonRole/CrashPersonRole.vspec Occupants  <- ersätt med struct array
+
+Occupants.Occupant:
+  type: rw
+  datatype: Types.Occupant[]
+  description: Array where each member contains data for one occupant
